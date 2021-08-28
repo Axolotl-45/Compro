@@ -6,7 +6,7 @@ const BreachCard = (props) => {
 
   return (
     <div>
-      <p name={name}>Name: {name}</p>
+      <p>Name: {name}</p>
       <p>Title: {title}</p>
       <p>Domain: {domain}</p>
       <p>Breach Date: {date}</p>
