@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Search = props => {
-  // const { handleClick } = this.props;
+  const { findUser } = props;
 
   return (
     <div>
       <input type='text' id="search"/>
-			{/* <button onClick={handleClick()}>Submit</button> */}
+			<button onClick={findUser}>Submit</button>
     </div>
   );
 };
