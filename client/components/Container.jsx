@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
+=======
+import axios from 'axios';
+>>>>>>> dev
 import Search from './SearchBar.jsx';
 import BreachContainer from './BreachContainer.jsx';
 
@@ -33,8 +37,8 @@ class Container extends Component {
         // console.log(response);
         this.setState({ websites: response })
       })
-      .catch(err => console.log('findUser err: ', err))
-  };
+      .catch(err => console.log('findUser err: ', err));
+  }
 
   /* removes the website from their list of compromised sites */
   deleteCard(e) {
