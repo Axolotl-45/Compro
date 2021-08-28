@@ -27,7 +27,8 @@ module.exports = {
     host: 'localhost',
     port: 8080,
     proxy: {
-      '/api': 'http://localhost:3000/',
+      '/': 'http://localhost:3000/',
+      '/api/**': 'http://localhost:3000/',
     }
   },
   plugins: [
