@@ -5,8 +5,8 @@ const Search = props => {
 
   return (
     <div>
-      <input type='text' id="search"/>
-			<button onClick={findUser}>Submit</button>
+      <input type="type" id="search"/>
+      <button onClick={findUser}>Submit</button>
     </div>
   );
 };

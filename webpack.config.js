@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {test: /\.jsx?/, exclude: [/node_modules/], use: [{loader: 'babel-loader', options: {presets: ['@babel/env', '@babel/react']}}]},
-      {test: /\.css$/i, use: ['style-loader', 'css-loader']},     
+      {test: /\.css$/i, use: ['style-loader', 'css-loader']},
     ],
   },
   devServer: {
@@ -27,8 +27,13 @@ module.exports = {
     host: 'localhost',
     port: 8080,
     proxy: {
-      '/': 'http://localhost:3000/',
-      '/api/**': 'http://localhost:3000/',
+      // '/': 'http://localhost:3000/',
+      // '/api/**': 'http://localhost:3000/',
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false,
+        changeOrigin: false,
+      }
     }
   },
   plugins: [
