@@ -7,7 +7,10 @@ const BreachContainer = props => {
   console.log(length);
 
   for (let x = 0; x < length; x++) {
-    cards.push(<BreachCard key={x} deleteCard={deleteCard}/>)
+    cards.push(<BreachCard
+      key={x}
+      id={x}
+      deleteCard={deleteCard} />)
   }
 
   return (

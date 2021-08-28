@@ -4,10 +4,13 @@ const BreachCard = props => {
   const { deleteCard } = props;
   return (
     <div>
-      <p>Image</p>
       <p>Name</p>
+      <p>Title</p>
+      <p>Domain</p>
+      <p>Breach Date</p>
+      <p>Pwn Count</p>
       <p>Description</p>
-      <p>Compromised Data</p>
+      <p>Logo</p>
       <button onClick={deleteCard}>Delete</button>
     </div>
   );

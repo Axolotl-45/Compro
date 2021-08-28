@@ -44,7 +44,6 @@ class Container extends Component {
   }
   
   render() {
-    // const length = this.state.websites.length;
     return (
       <div>
         <Search findUser={this.findUser} />
