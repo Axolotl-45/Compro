@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 
-=======
-import axios from 'axios';
->>>>>>> dev
 import Search from './SearchBar.jsx';
 import BreachContainer from './BreachContainer.jsx';
 
