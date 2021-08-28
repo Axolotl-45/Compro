@@ -22,13 +22,6 @@ class Container extends Component {
   findUser(e) {
     e.preventDefault();
     const searchKey = e.target.value;
-    // fetch('/api/createUser', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ input: searchKey }),
-    // })
     axios.post('/api/createUser', { input: searchKey })
       .then((response) => {
         this.setState({ websites: response });
