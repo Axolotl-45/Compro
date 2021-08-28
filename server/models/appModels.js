@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 // update
-const MONGO_URI = 'mongodb+srv://<username>:<password>@compro.nudsl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGO_URI = `mongodb+srv://${process.env.mongo_username}:${process.env.mongo_password}@compro.nudsl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -20,16 +20,19 @@ const userSchema = new Schema({
   //userid
   username: { type: String, required: true, unique: true },
   // password: { type: String, required: true },
-  breaches: [{
-    name: String,
-    title: String,
-    domain: String,
-    breach_date: String,
-    pwn_count: String, // integer
-    description: String,
-    logo_path: String,
-    is_verified: Boolean,
-  }]
+  breaches: [Object],
+
+  // {
+  //   name: String,
+  //   title: String,
+  //   domain: String,
+  //   breach_date: String,
+  //   pwn_count: Number, // integer
+  //   description: String,
+  //   logo_path: String,
+  //   is_verified: Boolean,
+  // }
+
   // breaches: [{
   //   //references the breach
   //   type: Schema.Types.ObjectId,
