@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 // update
-const MONGO_URI = 'mongodb+srv://<username>:<password>@compro.nudsl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGO_URI = `mongodb+srv://${process.env.mongo_username}:${process.env.mongo_password}@compro.nudsl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,

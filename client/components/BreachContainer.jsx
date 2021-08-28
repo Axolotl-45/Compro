@@ -1,7 +1,7 @@
 import React from 'react';
-import BreachCard from './BreachCard.jsx'
+import BreachCard from './BreachCard.jsx';
 
-const BreachContainer = props => {
+const BreachContainer = (props) => {
   const { length, deleteCard } = props;
   const cards = [];
   console.log(length);
@@ -10,14 +10,15 @@ const BreachContainer = props => {
     cards.push(<BreachCard
       key={x}
       id={x}
-      deleteCard={deleteCard} />)
+      deleteCard={deleteCard}
+    />);
   }
 
   return (
     <div>
       {cards}
     </div>
-  )
-}
+  );
+};
 
 export default BreachContainer;

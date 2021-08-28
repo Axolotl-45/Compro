@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Search from './SearchBar.jsx';
 import BreachContainer from './BreachContainer.jsx';
 
@@ -10,24 +11,30 @@ class Container extends Component {
     };
     this.findUser = this.findUser.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
-  };
+  }
+
+  // componentDidMount() {
+  //   fetch('/api/renderUser')
+  //     .then((res) => this.setState({ websites: res }))
+  //     .catch((err) => console.log(`componentDidMount ERR: ${err}`));
+  // }
 
   findUser(e) {
     e.preventDefault();
     const searchKey = e.target.value;
-    fetch('/api/createUser', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ input: searchKey }
-      )
-    })
-      .then(response => {
-        this.setState({ websites: response })
+    // fetch('/api/createUser', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ input: searchKey }),
+    // })
+    axios.post('/api/createUser', { input: searchKey })
+      .then((response) => {
+        this.setState({ websites: response });
       })
-      .catch(err => console.log('findUser err: ', err))
-  };
+      .catch((err) => console.log('findUser err: ', err));
+  }
 
   deleteCard(e) {
     e.preventDefault();
@@ -36,13 +43,7 @@ class Container extends Component {
     newState.websites.splice(cardId, 1);
     this.setState(newState);
   }
-  
-  componentDidMount() {
-    fetch('/api/renderUser')
-      .then(res => this.setState({ websites: res }))
-      .catch(err => console.log(`componentDidMount ERR: ${err}`)); 
-  }
-  
+
   render() {
     return (
       <div>
@@ -53,7 +54,7 @@ class Container extends Component {
         />
       </div>
     );
-  };
+  }
 }
 
 export default Container;
