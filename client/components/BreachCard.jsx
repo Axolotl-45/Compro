@@ -1,19 +1,21 @@
 import React from 'react';
 
-const BreachCard = props => {
-  const { deleteCard } = props;
+const BreachCard = (props) => {
+  const { deleteCard, info } = props;
+  const { name, title, domain, date, pwnCount, description, logo } = info;
+
   return (
     <div>
-      <p>Name</p>
-      <p>Title</p>
-      <p>Domain</p>
-      <p>Breach Date</p>
-      <p>Pwn Count</p>
-      <p>Description</p>
-      <p>Logo</p>
+      <p name={name}>Name: {name}</p>
+      <p>Title: {title}</p>
+      <p>Domain: {domain}</p>
+      <p>Breach Date: {date}</p>
+      <p>Pwn Count: {pwnCount}</p>
+      <p>Description: {description}</p>
+      <p>Logo: {logo}</p>
       <button onClick={deleteCard}>Delete</button>
     </div>
   );
-}
+};
 
 export default BreachCard;
