@@ -14,6 +14,10 @@ class Container extends Component {
   };
 
   // componentDidMount() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
   //   fetch('/api/renderUser')
   //     .then(res => this.setState({ websites: res }))
   //     .catch(err => console.log(`componentDidMount ERR: ${err}`)); 
@@ -32,12 +36,20 @@ class Container extends Component {
       .then(response => {
         // console.log(response);
         this.setState({ websites: response })
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
       })
       .catch(err => console.log('findUser err: ', err));
   }
 
   /* removes the website from their list of compromised sites */
   deleteCard(e) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
     // e.preventDefault();
     const cardId = 'help';
     console.log(e.target.id);
@@ -56,6 +68,11 @@ class Container extends Component {
       .catch(err => console.log('deleteCard err: ', err))
   };
   
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dev
   render() {
     return (
       <div>
