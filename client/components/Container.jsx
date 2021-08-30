@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Search from './SearchBar.jsx';
 import BreachContainer from './BreachContainer.jsx';
-import axios from 'axios';
 
 /* dummy data */
 const dummy = {
@@ -20,7 +19,7 @@ class Container extends Component {
     super(props);
     /*
     STATE:
-    websites : array of objects
+    websites : Array of objects
     */
     this.state = {
       websites: [dummy],
@@ -40,10 +39,6 @@ class Container extends Component {
   findUser(e) {
     e.preventDefault();
     const searchKey = document.getElementById('search').value;
-    
-    // axios.post('/api/createUser', { input: searchKey })
-    // .then(res => console.log(res.data))
-    // .then(response => this.setState({ websites : response.data}))
 
     fetch('/api/createUser', {
       method: 'POST',
