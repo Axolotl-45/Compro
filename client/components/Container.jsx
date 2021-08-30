@@ -59,7 +59,7 @@ class Container extends Component {
     e.preventDefault();
     const cardId = e.target.id
     const name = this.state.websites[cardId].Name;
-    
+
     fetch('/api/updateUser', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },

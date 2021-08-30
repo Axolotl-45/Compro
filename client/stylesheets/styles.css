@@ -1,0 +1,48 @@
+body {
+  background-color: #ffe9d5;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
+
+.deleteBtn {
+  background-color: #e42208;/* Green */
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.searchBtn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.breach-card-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.breach-card {
+  border: 2px solid #000;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 350px;
+}
+
+.breach-card img {
+  float: right;
+}

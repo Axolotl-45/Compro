@@ -20,7 +20,7 @@ const BreachContainer = (props) => {
   });
  
   return (
-    <div>
+    <div className="breach-card-container">
       {cards}
     </div>
   );
