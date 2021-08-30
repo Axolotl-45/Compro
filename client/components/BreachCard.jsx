@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* card template -- populates the data info */
 const BreachCard = (props) => {
   const { deleteCard, info } = props;
   const { name, title, domain, date, pwnCount, description, logo } = info;

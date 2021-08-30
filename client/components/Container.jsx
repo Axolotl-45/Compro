@@ -3,30 +3,43 @@ import React, { Component } from 'react';
 import Search from './SearchBar.jsx';
 import BreachContainer from './BreachContainer.jsx';
 
+/* dummy data */
+const dummy = {
+  name: 'first',
+  title: 'Google',
+  domain: 'google.com',
+  date: 'Aug 27, 2021',
+  pwnCount: '90000000000000',
+  description: 'barnicles',
+  logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png'
+};
+
 class Container extends Component {
   constructor(props) {
     super(props);
+    /*
+    STATE:
+    websites : array of objects
+    */
     this.state = {
-      websites: [{name: '123'}],
+      websites: [dummy],
     };
     this.findUser = this.findUser.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
   };
 
+  /* loads loggined in user's data */
   // componentDidMount() {
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
   //   fetch('/api/renderUser')
   //     .then(res => this.setState({ websites: res }))
   //     .catch(err => console.log(`componentDidMount ERR: ${err}`)); 
   // }
 
-  /* sends api query to find comproised data via email/username */
+  /* search button for api query */
   findUser(e) {
     e.preventDefault();
     const searchKey = document.getElementById('search').value;
+    console.log('search key: ', searchKey)
     
     fetch('/api/createUser', {
       method: 'POST',
@@ -34,32 +47,25 @@ class Container extends Component {
       body: JSON.stringify({ input: searchKey })
     })
       .then(response => {
-        // console.log(response);
+        console.log('data received', response);
         this.setState({ websites: response })
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
       })
       .catch(err => console.log('findUser err: ', err));
   }
 
-  /* removes the website from their list of compromised sites */
+  /* sends an update request via pressing the delete button */
   deleteCard(e) {
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
-    // e.preventDefault();
+    e.preventDefault();
     const cardId = 'help';
-    console.log(e.target.id);
+    console.log('id', e.target.getAttribute('id'));
     console.log(e.target);
     fetch('/api/updateUser', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ input: e.target.info.name })
     })
-    .then(response => {
+      .then(response => {
+        /* updates state by deleting old card */
         const newState = this.state;
         newState.websites.splice(cardId, 1);
         console.log('response', response);
@@ -68,11 +74,6 @@ class Container extends Component {
       .catch(err => console.log('deleteCard err: ', err))
   };
   
-<<<<<<< HEAD
-=======
-
-
->>>>>>> dev
   render() {
     return (
       <div>
