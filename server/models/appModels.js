@@ -19,14 +19,12 @@ const userSchema = new Schema({
   // password: { type: String, required: true },
   breaches: [Object],
 });
-
 const User = mongoose.model('user', userSchema);
 
 const sessionSchema = new Schema({
   cookieId: { type: String, required: true, unique: true },
   createdAt: { type: Date, expires: '30', default: Date.now },
 });
-
 const Session = mongoose.model('session', sessionSchema);
 
 module.exports = {
