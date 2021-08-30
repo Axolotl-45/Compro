@@ -40,15 +40,6 @@ class Container extends Component {
   findUser(e) {
     e.preventDefault();
     const searchKey = document.getElementById('search').value;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    console.log(searchKey)
-=======
-    console.log('search key: ', searchKey)
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
-=======
-    console.log('search key: ', searchKey)
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
     
     // axios.post('/api/createUser', { input: searchKey })
     // .then(res => console.log(res.data))
@@ -61,15 +52,7 @@ class Container extends Component {
     })
       .then(res => res.json())
       .then(response => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        console.log(response);
-=======
         console.log('data received', response);
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
-=======
-        console.log('data received', response);
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
         this.setState({ websites: response })
       })
       .catch(err => console.log('findUser err: ', err));
@@ -77,27 +60,6 @@ class Container extends Component {
 
   /* sends an update request via pressing the delete button */
   deleteCard(e) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // e.preventDefault();
-    const cardId = 'help';
-    console.log(e.target.id);
-    console.log(e.target);
-    fetch('/api/updateUser', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ input: e.target.info.name })
-    })
-    .then(response => {
-        const newState = this.state;
-        newState.websites.splice(cardId, 1);
-        console.log('response', response);
-        this.setState(newState);
-      })
-      .catch(err => console.log('deleteCard err: ', err))
-=======
-=======
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
     e.preventDefault();
     const cardId = e.target.id;
     console.log('id', e.target.id);
@@ -117,10 +79,6 @@ class Container extends Component {
     const newState = this.state;
     newState.websites.splice(cardId, 1);
     this.setState(newState);
-<<<<<<< HEAD
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
-=======
->>>>>>> 8f9461d71f56b4feaf04eada2f6007b852a4b003
   };
   
   render() {
