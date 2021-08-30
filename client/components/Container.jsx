@@ -6,13 +6,13 @@ import axios from 'axios';
 
 /* dummy data */
 const dummy = {
-  name: 'first',
-  title: 'Google',
-  domain: 'google.com',
-  date: 'Aug 27, 2021',
-  pwnCount: '90000000000000',
-  description: 'barnicles',
-  logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png'
+  Name: 'first',
+  Title: 'Google',
+  Domain: 'google.com',
+  BreachDate: 'Aug 27, 2021',
+  PwnCount: '90000000000000',
+  Description: 'barnicles',
+  LogoPath: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png'
 };
 
 class Container extends Component {
