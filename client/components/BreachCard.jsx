@@ -13,7 +13,7 @@ const BreachCard = (props) => {
       <p>Breach Date: {date}</p>
       <p>Pwn Count: {pwnCount}</p>
       <p>Description: {description}</p>
-      <p>Logo: {logo}</p>
+      <img src={logo} height='100' width='100' />
       <button onClick={deleteCard}>Delete</button>
     </div>
   );
