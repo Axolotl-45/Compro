@@ -41,7 +41,7 @@ userController.getBreaches = async (req, res, next) => {
   try {
     const username = req.body.input;
     const userBreaches = await User.findOne({ username });
-    res.locals.breaches = userBreaches.breaches.data;
+    res.locals.breaches = userBreaches.breaches;
     return next();
   } catch (err) {
     return next(err);
