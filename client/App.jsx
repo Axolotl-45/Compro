@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 /* Imports for paths for components */
-import Container from './components/Container.jsx'
+import Container from './components/Container.jsx';
 
 /* Stylesheet imports */
+import './stylesheets/styles.css';
 
 const App = props => {
   return (
