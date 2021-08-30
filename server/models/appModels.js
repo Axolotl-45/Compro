@@ -12,7 +12,7 @@ mongoose.connect(MONGO_URI, {
   useFindAndModify: false
 })
   .then(() => console.log('Connected to Mongo DB.'))
-  .catch(err => console.log(err));
+  .catch(err => console.log('Connection to Mongo DB failed', err));
 
 const Schema = mongoose.Schema;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* search bar to send api request */
 const Search = props => {
   const { findUser } = props;
 
