@@ -25,11 +25,11 @@ userController.createUser = async (req, res, next) => {
 
 userController.updateUser = async (req, res, next) => {
   try {
-    const userId = req.body.input;
-    const breachName = req.body;
+    const name = req.body.input;
+    const username = req.body.username;
     await User.findOneAndUpdate(
-      { _id: userId },
-      { $pull: { breaches: { name: breachName } } }
+      { username: username },
+      { $pull: { breaches: { Name: name } } }
     );
     return next();
   } catch (err) {
