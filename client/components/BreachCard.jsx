@@ -2,7 +2,7 @@ import React from 'react';
 
 /* card template -- populates the data info */
 const BreachCard = (props) => {
-  const { deleteCard, info } = props;
+  const { deleteCard, info, id } = props;
   const { Name, Title, Domain, BreachDate, PwnCount, Description, LogoPath } = info;
 
   return (
@@ -14,7 +14,7 @@ const BreachCard = (props) => {
       <p>Pwn Count: {PwnCount}</p>
       <p>Description: {Description}</p>
       <img src={LogoPath} height='100' width='100' />
-      <button onClick={deleteCard}>Delete</button>
+      <button onClick={deleteCard} id={id} >Delete</button>
     </div>
   );
 };

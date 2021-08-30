@@ -23,6 +23,7 @@ class Container extends Component {
     */
     this.state = {
       websites: [dummy],
+      currentUser: '',
     };
     this.findUser = this.findUser.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
@@ -47,8 +48,8 @@ class Container extends Component {
     })
       .then(res => res.json())
       .then(response => {
-        console.log('data received', response);
-        this.setState({ websites: response })
+        // console.log('data received', response);
+        this.setState({ websites: response, currentUser: searchKey })
       })
       .catch(err => console.log('findUser err: ', err));
   }
@@ -56,21 +57,17 @@ class Container extends Component {
   /* sends an update request via pressing the delete button */
   deleteCard(e) {
     e.preventDefault();
-    const cardId = e.target.id;
-    console.log('id', e.target.id);
-
-    // fetch('/api/updateUser', {
-    //   method: 'PATCH',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ input: e.target.info.name })
-    // })
-    //   .then(response => {
-    //     /* updates state by deleting old card */
-    //     console.log('update response: ', response);
-    //     this.setState({ websites: response });
-    //   })
-    //   .catch(err => console.log('deleteCard err: ', err));
+    const cardId = e.target.id
+    const name = this.state.websites[cardId].Name;
     
+    fetch('/api/updateUser', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ input: name, username: this.state.currentUser })
+    })
+      .catch(err => console.log('deleteCard err: ', err));
+    
+    /* deletes card from current state */ 
     const newState = this.state;
     newState.websites.splice(cardId, 1);
     this.setState(newState);
