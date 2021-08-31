@@ -1,9 +1,6 @@
-// url.com/?api-key=${process.env.api_key}
 require('dotenv').config();
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
-const fetch = require('node-fetch');
 const app = express();
 const PORT = 3000;
 

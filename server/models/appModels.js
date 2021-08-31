@@ -21,13 +21,13 @@ const userSchema = new Schema({
 });
 const User = mongoose.model('user', userSchema);
 
-const sessionSchema = new Schema({
-  cookieId: { type: String, required: true, unique: true },
-  createdAt: { type: Date, expires: '30', default: Date.now },
-});
-const Session = mongoose.model('session', sessionSchema);
+// const sessionSchema = new Schema({
+//   cookieId: { type: String, required: true, unique: true },
+//   createdAt: { type: Date, expires: '30', default: Date.now },
+// });
+// const Session = mongoose.model('session', sessionSchema);
 
 module.exports = {
   User,
-  Session,
+  // Session,
 };

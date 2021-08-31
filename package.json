@@ -7,10 +7,9 @@
     "start": "nodemon server.js",
     "dev": "concurrently \"webpack serve --open ./\" \"nodemon ./server/server.js\""
   },
-  "author": "",
+  "author": "axolotl-45",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
