@@ -1,20 +1,20 @@
 import React from 'react';
+import { Markup } from 'interweave';
 
 /* card template -- populates the data info */
 const BreachCard = (props) => {
   const { deleteCard, info, id } = props;
   const { Name, Title, Domain, BreachDate, PwnCount, Description, LogoPath } = info;
-
+  const pwnCountStr = PwnCount.string
   return (
-    <div>
-      <p>Name: {Name}</p>
-      <p>Title: {Title}</p>
-      <p>Domain: {Domain}</p>
-      <p>Breach Date: {BreachDate}</p>
-      <p>Pwn Count: {PwnCount}</p>
-      <p>Description: {Description}</p>
-      <img src={LogoPath} height='100' width='100' />
-      <button onClick={deleteCard} id={id} >Delete</button>
+    <div className="breach-card">
+      <img src={LogoPath} className='breach-card-image' />
+      <h3><b>{Name}</b></h3>
+      <p><b>Domain:</b> <a href={'http://' + Domain} target="_blank">{Domain}</a></p>
+      <p><b>Breach Date:</b> <i>{BreachDate}</i></p>
+      <p><b>Pwn Count:</b> {PwnCount}</p>
+      <p><b>Description:</b> <Markup content={Description}/></p>
+      <button className="deleteBtn" onClick={deleteCard} id={id} >Delete</button>
     </div>
   );
 };

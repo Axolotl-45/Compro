@@ -1,13 +1,14 @@
 import React from 'react';
+import {Form, Button} from 'react-bootstrap';
 
 /* search bar to send api request */
 const Search = props => {
   const { findUser } = props;
 
   return (
-    <div>
-      <input type="type" id="search"/>
-      <button onClick={findUser}>Submit</button>
+    <div className="searchbar">
+      <input type="type" id="search" placeholder="Enter email address..."/>
+      <button className="searchBtn" onClick={findUser}>Submit</button>
     </div>
   );
 };
