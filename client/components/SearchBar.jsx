@@ -1,5 +1,4 @@
 import React from 'react';
-import {Form, Button} from 'react-bootstrap';
 
 /* search bar to send api request */
 const Search = props => {

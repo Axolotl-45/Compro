@@ -4,12 +4,13 @@ import { Markup } from 'interweave';
 /* card template -- populates the data info */
 const BreachCard = (props) => {
   const { deleteCard, info, id } = props;
-  const { Name, Title, Domain, BreachDate, PwnCount, Description, LogoPath } = info;
-  const pwnCountStr = PwnCount.string;
+  const { Name, Domain, BreachDate, PwnCount, Description, LogoPath } = info;
+  
   const numberWithCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
   }
   const pwnCountCommas = numberWithCommas(PwnCount);
+
   return (
     <div className="breach-card">
       <img src={LogoPath} className='breach-card-image' />
