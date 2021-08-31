@@ -3,38 +3,29 @@ import React, { Component } from 'react';
 import Search from './SearchBar.jsx';
 import BreachContainer from './BreachContainer.jsx';
 
-/* dummy data */
-const dummy = {
-  Name: 'first',
-  Title: 'Google',
-  Domain: 'google.com',
-  BreachDate: 'Aug 27, 2021',
-  PwnCount: '90000000000000',
-  Description: 'barnicles',
-  LogoPath: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png'
-};
-
 class Container extends Component {
   constructor(props) {
     super(props);
     /*
     STATE:
     websites : Array of objects
+    currentUser: String
     */
     this.state = {
-      websites: [dummy],
+      websites: [],
       currentUser: '',
     };
     this.findUser = this.findUser.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
   };
 
-  /* loads loggined in user's data */
-  // componentDidMount() {
-  //   fetch('/api/renderUser')
-  //     .then(res => this.setState({ websites: res }))
-  //     .catch(err => console.log(`componentDidMount ERR: ${err}`)); 
-  // }
+  /* loads data */
+  componentDidMount() {
+    fetch('/api/renderUser')
+      .then(data => data.json())
+      .then(res => this.setState({ websites: res }))
+      .catch(err => console.log(`componentDidMount ERR: ${err}`)); 
+  }
 
   /* search button for api query */
   findUser(e) {

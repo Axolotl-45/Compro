@@ -7,8 +7,8 @@ const Search = props => {
 
   return (
     <div className="searchbar">
-      <input type="type" id="search"/>
-      <button class="searchBtn" onClick={findUser}>Submit</button>
+      <input type="type" id="search" placeholder="Enter email address..."/>
+      <button className="searchBtn" onClick={findUser}>Submit</button>
     </div>
   );
 };

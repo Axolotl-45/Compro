@@ -5,17 +5,16 @@ import { Markup } from 'interweave';
 const BreachCard = (props) => {
   const { deleteCard, info, id } = props;
   const { Name, Title, Domain, BreachDate, PwnCount, Description, LogoPath } = info;
-
+  const pwnCountStr = PwnCount.string
   return (
     <div className="breach-card">
-      <img src={LogoPath} height='100' width='100' className='breach-card-image' />
-      <p>Name: {Name}</p>
-      <p>Title: {Title}</p>
-      <p>Domain: <a href={Domain}>{Domain}</a></p>
-      <p>Breach Date: {BreachDate}</p>
-      <p>Pwn Count: {PwnCount}</p>
-      <p>Description: <Markup content={Description}/></p>
-      <button class="deleteBtn" onClick={deleteCard} id={id} >Delete</button>
+      <img src={LogoPath} className='breach-card-image' />
+      <h3><b>{Name}</b></h3>
+      <p><b>Domain:</b> <a href={'http://' + Domain} target="_blank">{Domain}</a></p>
+      <p><b>Breach Date:</b> <i>{BreachDate}</i></p>
+      <p><b>Pwn Count:</b> {PwnCount}</p>
+      <p><b>Description:</b> <Markup content={Description}/></p>
+      <button className="deleteBtn" onClick={deleteCard} id={id} >Delete</button>
     </div>
   );
 };

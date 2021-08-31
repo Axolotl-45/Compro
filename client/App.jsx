@@ -11,14 +11,11 @@ const App = props => {
   return (
     <div className="router">
       <main>
+      <div className="title">
+        <h1>Compro</h1>
+      </div>
         < Container />
-
-        {/*
-            NOTE: The syntax below is for React-Router
-              - A helpful library for routing with a React app.
-              You can learn more about this at:
-              https://reacttraining.com/react-router/web/guides/quick-start
-        */}
+        
         {/* <Switch>
           <Route
             exact
